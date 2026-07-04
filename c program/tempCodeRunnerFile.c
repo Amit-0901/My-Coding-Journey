@@ -1,0 +1,1 @@
+printf(" the size of pointer p1 is : %d",sizeof(P1));
