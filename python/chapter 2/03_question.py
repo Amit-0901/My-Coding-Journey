@@ -1,0 +1,11 @@
+ #3. Check the type of variable assigned using input() function.
+a = input("Enter a value: ")
+b = int(input("Enter a value: "))
+c = float(input("Enter a value: "))
+d = bool(input("Enter a value: "))
+e = str(input("Enter a value: "))
+print("The type of variable a is : ", type(a))
+print("The type of variable b is : ", type(b))
+print("The type of variable c is : ", type(c))
+print("The type of variable d is : ", type(d))
+print("The type of variable e is : ", type(e))
