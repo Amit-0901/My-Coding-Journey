@@ -1,22 +1,33 @@
-#include<iostream>
+#include<bits/stdc++.h>
 #include<vector>
 using namespace std;
+class Solution{
+    public:
+    vector<int> leader(vector<int>& nums){
+     vector<int> ans;
+     if(nums.size() == 0){
+        return ans;
+     }
+     int max;
+     max = nums[nums.size() - 1];
+     ans.push_back(nums[nums.size() - 1]);
+     for(int i = nums.size() - 2 ; i>= 0 ; i--){
+        if(nums[i] > max){
+            ans.push_back(nums[i]);
+            max = nums[i];
+        }       
+     }
+     reverse(ans.begin(),ans.end());
+     return ans;
+    }
+};
 int main(){
-    int n;
-    cout<<"enter the number of elements in array : ";
-    cin>>n;
-    int arr[5] = {5,8,4,3,0};
-    int leader;
-    leader= arr[5-1] ;
-    int temp[5];
-    temp[0] = leader;
-    for(int i = 0 ; i<5-1 ; i++){
-        if(arr[i] > leader && arr[i] > arr[] ){
-            temp[i+1] = arr[i];
-        }
+    Solution s;
+    vector<int> nums = {10, 22, 12, 3, 0, 6};
+    vector<int> ans = s.leader(nums);
+    for(int i = 0; i<ans.size(); i++){
+        cout<<ans[i]<<" ";
     }
-    for(int i = 0 ; i<5 ; i++){
-        cout<<temp[i];
-    }
-    
+
+    return 0;
 }
