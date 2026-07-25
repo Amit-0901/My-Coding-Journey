@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class UpperBoundFinder {
+public:
+    int upperBound(vector<int> &arr, int x, int n) {
+        int low = 0, high = n - 1;
+        int ans = n;  
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            if (arr[mid] > x) {
+                ans = mid;       
+                high = mid - 1;   
+            } else {
+                low = mid + 1;    
+            }
+        }
+        return ans;  
+    }
+};
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+class Solution{
+    public :
+     int lower_bound(vector<int>& nums , int target){
+        for(int i = 0 ; i< nums.size() ; i++){
+            if(nums[i] > target){
+                return i;
+            }
+        }
+        return nums.size();
+     }
+};
